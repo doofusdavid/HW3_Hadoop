@@ -11,9 +11,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 import java.io.IOException;
 
-/**
- * Created by david on 3/20/17.
- */
+
 public class WordCountJob
 {
     public static void main(String[] args)
