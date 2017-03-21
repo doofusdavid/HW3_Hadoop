@@ -23,22 +23,22 @@ public class CensusData
             throw new IllegalArgumentException("Data Line length:" + censusDataLine.length());
 
         // Administrative Items
-        stateAbbreviation = censusDataLine.substring(9, 2);
-        summaryLevel = Integer.parseInt(censusDataLine.substring(11, 3));
-        logicalRecordNumber = Integer.parseInt(censusDataLine.substring(19, 6));
-        logicalRecordPartNumber = Integer.parseInt(censusDataLine.substring(25, 4));
-        totalNumberOfPartsInRecord = Integer.parseInt(censusDataLine.substring(29, 4));
+        stateAbbreviation = censusDataLine.substring(9, 10);
+        summaryLevel = Integer.parseInt(censusDataLine.substring(11, 13));
+        logicalRecordNumber = Integer.parseInt(censusDataLine.substring(19, 24));
+        logicalRecordPartNumber = Integer.parseInt(censusDataLine.substring(25, 28));
+        totalNumberOfPartsInRecord = Integer.parseInt(censusDataLine.substring(29, 32));
 
         // Population
-        persons = Integer.parseInt(censusDataLine.substring(301, 9));
+        persons = Integer.parseInt(censusDataLine.substring(301, 309));
 
         // Urban and Rural
-        insideUrbanizedArea = Integer.parseInt(censusDataLine.substring(328, 9));
-        outsideUrbanizedArea = Integer.parseInt(censusDataLine.substring(337, 9));
+        insideUrbanizedArea = Integer.parseInt(censusDataLine.substring(328, 336));
+        outsideUrbanizedArea = Integer.parseInt(censusDataLine.substring(337, 345));
 
         // Gender
-        male = Integer.parseInt(censusDataLine.substring(364, 9));
-        female = Integer.parseInt(censusDataLine.substring(373, 9));
+        male = Integer.parseInt(censusDataLine.substring(364, 372));
+        female = Integer.parseInt(censusDataLine.substring(373, 381));
     }
 
     public String getStateAbbreviation()
