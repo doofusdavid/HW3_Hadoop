@@ -191,7 +191,6 @@ public class CensusData
     private final int rentOver1000;
     private final int rentNoCashRent;
 
-
     public CensusData(String censusDataLine)
     {
 
@@ -451,4 +450,770 @@ public class CensusData
     {
         return female;
     }
+
+    public int getAgeUnder1()
+    {
+        return ageUnder1;
+    }
+
+    public int getAgeBetween1and2()
+    {
+        return ageBetween1and2;
+    }
+
+    public int getAgeBetween3and4()
+    {
+        return ageBetween3and4;
+    }
+
+    public int getAge5()
+    {
+        return age5;
+    }
+
+    public int getAge6()
+    {
+        return age6;
+    }
+
+    public int getAgeBetween7and9()
+    {
+        return ageBetween7and9;
+    }
+
+    public int getAgeBetween10and11()
+    {
+        return ageBetween10and11;
+    }
+
+    public int getAgeBetween12and13()
+    {
+        return ageBetween12and13;
+    }
+
+    public int getAge14()
+    {
+        return age14;
+    }
+
+    public int getAge15()
+    {
+        return age15;
+    }
+
+    public int getAge16()
+    {
+        return age16;
+    }
+
+    public int getAge17()
+    {
+        return age17;
+    }
+
+    public int getAge18()
+    {
+        return age18;
+    }
+
+    public int getAge19()
+    {
+        return age19;
+    }
+
+    public int getAge20()
+    {
+        return age20;
+    }
+
+    public int getAge21()
+    {
+        return age21;
+    }
+
+    public int getAgeBetween22and24()
+    {
+        return ageBetween22and24;
+    }
+
+    public int getAgeBetween25and29()
+    {
+        return ageBetween25and29;
+    }
+
+    public int getAgeBetween30and34()
+    {
+        return ageBetween30and34;
+    }
+
+    public int getAgeBetween35and39()
+    {
+        return ageBetween35and39;
+    }
+
+    public int getAgeBetween40and44()
+    {
+        return ageBetween40and44;
+    }
+
+    public int getAgeBetween45and49()
+    {
+        return ageBetween45and49;
+    }
+
+    public int getAgeBetween50and54()
+    {
+        return ageBetween50and54;
+    }
+
+    public int getAgeBetween55and59()
+    {
+        return ageBetween55and59;
+    }
+
+    public int getAgeBetween60and61()
+    {
+        return ageBetween60and61;
+    }
+
+    public int getAgeBetween62and64()
+    {
+        return ageBetween62and64;
+    }
+
+    public int getAgeBetween65and69()
+    {
+        return ageBetween65and69;
+    }
+
+    public int getAgeBetween70and74()
+    {
+        return ageBetween70and74;
+    }
+
+    public int getAgeBetween75and79()
+    {
+        return ageBetween75and79;
+    }
+
+    public int getAgeBetween80and84()
+    {
+        return ageBetween80and84;
+    }
+
+    public int getAge85andOver()
+    {
+        return age85andOver;
+    }
+
+    public int getHispanicMaleAgeUnder1()
+    {
+        return hispanicMaleAgeUnder1;
+    }
+
+    public int getHispanicMaleAgeBetween1and2()
+    {
+        return hispanicMaleAgeBetween1and2;
+    }
+
+    public int getHispanicMaleAgeBetween3and4()
+    {
+        return hispanicMaleAgeBetween3and4;
+    }
+
+    public int getHispanicMaleAge5()
+    {
+        return hispanicMaleAge5;
+    }
+
+    public int getHispanicMaleAge6()
+    {
+        return hispanicMaleAge6;
+    }
+
+    public int getHispanicMaleAgeBetween7and9()
+    {
+        return hispanicMaleAgeBetween7and9;
+    }
+
+    public int getHispanicMaleAgeBetween10and11()
+    {
+        return hispanicMaleAgeBetween10and11;
+    }
+
+    public int getHispanicMaleAgeBetween12and13()
+    {
+        return hispanicMaleAgeBetween12and13;
+    }
+
+    public int getHispanicMaleAge14()
+    {
+        return hispanicMaleAge14;
+    }
+
+    public int getHispanicMaleAge15()
+    {
+        return hispanicMaleAge15;
+    }
+
+    public int getHispanicMaleAge16()
+    {
+        return hispanicMaleAge16;
+    }
+
+    public int getHispanicMaleAge17()
+    {
+        return hispanicMaleAge17;
+    }
+
+    public int getHispanicMaleAge18()
+    {
+        return hispanicMaleAge18;
+    }
+
+    public int getHispanicMaleAge19()
+    {
+        return hispanicMaleAge19;
+    }
+
+    public int getHispanicMaleAge20()
+    {
+        return hispanicMaleAge20;
+    }
+
+    public int getHispanicMaleAge21()
+    {
+        return hispanicMaleAge21;
+    }
+
+    public int getHispanicMaleAgeBetween22and24()
+    {
+        return hispanicMaleAgeBetween22and24;
+    }
+
+    public int getHispanicMaleAgeBetween25and29()
+    {
+        return hispanicMaleAgeBetween25and29;
+    }
+
+    public int getHispanicMaleAgeBetween30and34()
+    {
+        return hispanicMaleAgeBetween30and34;
+    }
+
+    public int getHispanicMaleAgeBetween35and39()
+    {
+        return hispanicMaleAgeBetween35and39;
+    }
+
+    public int getHispanicMaleAgeBetween40and44()
+    {
+        return hispanicMaleAgeBetween40and44;
+    }
+
+    public int getHispanicMaleAgeBetween45and49()
+    {
+        return hispanicMaleAgeBetween45and49;
+    }
+
+    public int getHispanicMaleAgeBetween50and54()
+    {
+        return hispanicMaleAgeBetween50and54;
+    }
+
+    public int getHispanicMaleAgeBetween55and59()
+    {
+        return hispanicMaleAgeBetween55and59;
+    }
+
+    public int getHispanicMaleAgeBetween60and61()
+    {
+        return hispanicMaleAgeBetween60and61;
+    }
+
+    public int getHispanicMaleAgeBetween62and64()
+    {
+        return hispanicMaleAgeBetween62and64;
+    }
+
+    public int getHispanicMaleAgeBetween65and69()
+    {
+        return hispanicMaleAgeBetween65and69;
+    }
+
+    public int getHispanicMaleAgeBetween70and74()
+    {
+        return hispanicMaleAgeBetween70and74;
+    }
+
+    public int getHispanicMaleAgeBetween75and79()
+    {
+        return hispanicMaleAgeBetween75and79;
+    }
+
+    public int getHispanicMaleAgeBetween80and84()
+    {
+        return hispanicMaleAgeBetween80and84;
+    }
+
+    public int getHispanicMaleAge85andOver()
+    {
+        return hispanicMaleAge85andOver;
+    }
+
+    public int getHispanicFemaleAgeUnder1()
+    {
+        return hispanicFemaleAgeUnder1;
+    }
+
+    public int getHispanicFemaleAgeBetween1and2()
+    {
+        return hispanicFemaleAgeBetween1and2;
+    }
+
+    public int getHispanicFemaleAgeBetween3and4()
+    {
+        return hispanicFemaleAgeBetween3and4;
+    }
+
+    public int getHispanicFemaleAge5()
+    {
+        return hispanicFemaleAge5;
+    }
+
+    public int getHispanicFemaleAge6()
+    {
+        return hispanicFemaleAge6;
+    }
+
+    public int getHispanicFemaleAgeBetween7and9()
+    {
+        return hispanicFemaleAgeBetween7and9;
+    }
+
+    public int getHispanicFemaleAgeBetween10and11()
+    {
+        return hispanicFemaleAgeBetween10and11;
+    }
+
+    public int getHispanicFemaleAgeBetween12and13()
+    {
+        return hispanicFemaleAgeBetween12and13;
+    }
+
+    public int getHispanicFemaleAge14()
+    {
+        return hispanicFemaleAge14;
+    }
+
+    public int getHispanicFemaleAge15()
+    {
+        return hispanicFemaleAge15;
+    }
+
+    public int getHispanicFemaleAge16()
+    {
+        return hispanicFemaleAge16;
+    }
+
+    public int getHispanicFemaleAge17()
+    {
+        return hispanicFemaleAge17;
+    }
+
+    public int getHispanicFemaleAge18()
+    {
+        return hispanicFemaleAge18;
+    }
+
+    public int getHispanicFemaleAge19()
+    {
+        return hispanicFemaleAge19;
+    }
+
+    public int getHispanicFemaleAge20()
+    {
+        return hispanicFemaleAge20;
+    }
+
+    public int getHispanicFemaleAge21()
+    {
+        return hispanicFemaleAge21;
+    }
+
+    public int getHispanicFemaleAgeBetween22and24()
+    {
+        return hispanicFemaleAgeBetween22and24;
+    }
+
+    public int getHispanicFemaleAgeBetween25and29()
+    {
+        return hispanicFemaleAgeBetween25and29;
+    }
+
+    public int getHispanicFemaleAgeBetween30and34()
+    {
+        return hispanicFemaleAgeBetween30and34;
+    }
+
+    public int getHispanicFemaleAgeBetween35and39()
+    {
+        return hispanicFemaleAgeBetween35and39;
+    }
+
+    public int getHispanicFemaleAgeBetween40and44()
+    {
+        return hispanicFemaleAgeBetween40and44;
+    }
+
+    public int getHispanicFemaleAgeBetween45and49()
+    {
+        return hispanicFemaleAgeBetween45and49;
+    }
+
+    public int getHispanicFemaleAgeBetween50and54()
+    {
+        return hispanicFemaleAgeBetween50and54;
+    }
+
+    public int getHispanicFemaleAgeBetween55and59()
+    {
+        return hispanicFemaleAgeBetween55and59;
+    }
+
+    public int getHispanicFemaleAgeBetween60and61()
+    {
+        return hispanicFemaleAgeBetween60and61;
+    }
+
+    public int getHispanicFemaleAgeBetween62and64()
+    {
+        return hispanicFemaleAgeBetween62and64;
+    }
+
+    public int getHispanicFemaleAgeBetween65and69()
+    {
+        return hispanicFemaleAgeBetween65and69;
+    }
+
+    public int getHispanicFemaleAgeBetween70and74()
+    {
+        return hispanicFemaleAgeBetween70and74;
+    }
+
+    public int getHispanicFemaleAgeBetween75and79()
+    {
+        return hispanicFemaleAgeBetween75and79;
+    }
+
+    public int getHispanicFemaleAgeBetween80and84()
+    {
+        return hispanicFemaleAgeBetween80and84;
+    }
+
+    public int getHispanicFemaleAge85andOver()
+    {
+        return hispanicFemaleAge85andOver;
+    }
+
+    public int getMaleNeverMarried()
+    {
+        return maleNeverMarried;
+    }
+
+    public int getMaleMarriedButSeparated()
+    {
+        return maleMarriedButSeparated;
+    }
+
+    public int getMaleSeparated()
+    {
+        return maleSeparated;
+    }
+
+    public int getMaleWidowed()
+    {
+        return maleWidowed;
+    }
+
+    public int getFemaleNeverMarried()
+    {
+        return femaleNeverMarried;
+    }
+
+    public int getFemaleMarriedButSeparated()
+    {
+        return femaleMarriedButSeparated;
+    }
+
+    public int getFemaleSeparated()
+    {
+        return femaleSeparated;
+    }
+
+    public int getFemaleWidowed()
+    {
+        return femaleWidowed;
+    }
+
+    public int getOwnerOccupied()
+    {
+        return ownerOccupied;
+    }
+
+    public int getRenterOccupied()
+    {
+        return renterOccupied;
+    }
+
+    public int getUrbanInsideUrbanizedArea()
+    {
+        return urbanInsideUrbanizedArea;
+    }
+
+    public int getUrbanOutsideUrbanizedArea()
+    {
+        return urbanOutsideUrbanizedArea;
+    }
+
+    public int getRural()
+    {
+        return rural;
+    }
+
+    public int getUrbanRuralNotDefined()
+    {
+        return urbanRuralNotDefined;
+    }
+
+    public int getHouse1Room()
+    {
+        return house1Room;
+    }
+
+    public int getHouse2Room()
+    {
+        return house2Room;
+    }
+
+    public int getHouse3Room()
+    {
+        return house3Room;
+    }
+
+    public int getHouse4Room()
+    {
+        return house4Room;
+    }
+
+    public int getHouse5Room()
+    {
+        return house5Room;
+    }
+
+    public int getHouse6Room()
+    {
+        return house6Room;
+    }
+
+    public int getHouse7Room()
+    {
+        return house7Room;
+    }
+
+    public int getHouse8Room()
+    {
+        return house8Room;
+    }
+
+    public int getHouse9Room()
+    {
+        return house9Room;
+    }
+
+    public int getHouseValueUnder15k()
+    {
+        return houseValueUnder15k;
+    }
+
+    public int getHouseValue15kto20k()
+    {
+        return houseValue15kto20k;
+    }
+
+    public int getHouseValue20kto25k()
+    {
+        return houseValue20kto25k;
+    }
+
+    public int getHouseValue25kto30k()
+    {
+        return houseValue25kto30k;
+    }
+
+    public int getHouseValue30kto35k()
+    {
+        return houseValue30kto35k;
+    }
+
+    public int getHouseValue35kto40k()
+    {
+        return houseValue35kto40k;
+    }
+
+    public int getHouseValue40kto45k()
+    {
+        return houseValue40kto45k;
+    }
+
+    public int getHouseValue45kto50k()
+    {
+        return houseValue45kto50k;
+    }
+
+    public int getHouseValue50kto60k()
+    {
+        return houseValue50kto60k;
+    }
+
+    public int getHouseValue60kto75k()
+    {
+        return houseValue60kto75k;
+    }
+
+    public int getHouseValue75kto100k()
+    {
+        return houseValue75kto100k;
+    }
+
+    public int getHouseValue100kto125k()
+    {
+        return houseValue100kto125k;
+    }
+
+    public int getHouseValue125kto150k()
+    {
+        return houseValue125kto150k;
+    }
+
+    public int getHouseValue150kto175k()
+    {
+        return houseValue150kto175k;
+    }
+
+    public int getHouseValue175kto200k()
+    {
+        return houseValue175kto200k;
+    }
+
+    public int getHouseValue200kto250k()
+    {
+        return houseValue200kto250k;
+    }
+
+    public int getHouseValue250kto300k()
+    {
+        return houseValue250kto300k;
+    }
+
+    public int getHouseValue300kto400k()
+    {
+        return houseValue300kto400k;
+    }
+
+    public int getHouseValue400kto500k()
+    {
+        return houseValue400kto500k;
+    }
+
+    public int getHouseValue500kAndOver()
+    {
+        return houseValue500kAndOver;
+    }
+
+    public int getRentUnder100()
+    {
+        return rentUnder100;
+    }
+
+    public int getRent100To149()
+    {
+        return rent100To149;
+    }
+
+    public int getRent150To199()
+    {
+        return rent150To199;
+    }
+
+    public int getRent200To249()
+    {
+        return rent200To249;
+    }
+
+    public int getRent250To299()
+    {
+        return rent250To299;
+    }
+
+    public int getRent300To349()
+    {
+        return rent300To349;
+    }
+
+    public int getRent350To399()
+    {
+        return rent350To399;
+    }
+
+    public int getRent400To449()
+    {
+        return rent400To449;
+    }
+
+    public int getRent450To499()
+    {
+        return rent450To499;
+    }
+
+    public int getRent500To549()
+    {
+        return rent500To549;
+    }
+
+    public int getRent550To599()
+    {
+        return rent550To599;
+    }
+
+    public int getRent600To649()
+    {
+        return rent600To649;
+    }
+
+    public int getRent650To699()
+    {
+        return rent650To699;
+    }
+
+    public int getRent700To749()
+    {
+        return rent700To749;
+    }
+
+    public int getRent750To999()
+    {
+        return rent750To999;
+    }
+
+    public int getRentOver1000()
+    {
+        return rentOver1000;
+    }
+
+    public int getRentNoCashRent()
+    {
+        return rentNoCashRent;
+    }
+
 }
