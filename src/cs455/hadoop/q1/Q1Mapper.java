@@ -15,7 +15,7 @@ public class Q1Mapper extends Mapper<LongWritable, Text, Text, IntWritable>
     {
         CensusData data = new CensusData(value.toString());
 
-        if (data.getSummaryLevel() == 400)
+        if (data.getSummaryLevel() == 100)
             context.write(new Text(data.getStateAbbreviation()), new IntWritable(data.getFemale()));
     }
 }
