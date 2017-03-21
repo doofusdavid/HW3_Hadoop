@@ -23,24 +23,30 @@ public class CensusData
             throw new IllegalArgumentException("Data Line length:" + censusDataLine.length());
 
         // Administrative Items
-        stateAbbreviation = censusDataLine.substring(9, 10);
-        summaryLevel = Integer.parseInt(censusDataLine.substring(11, 13));
-        logicalRecordNumber = Integer.parseInt(censusDataLine.substring(19, 24));
-        logicalRecordPartNumber = Integer.parseInt(censusDataLine.substring(25, 28));
-        totalNumberOfPartsInRecord = Integer.parseInt(censusDataLine.substring(29, 32));
+        stateAbbreviation = eSubstring(censusDataLine, 9, 2);
+        summaryLevel = Integer.parseInt(eSubstring(censusDataLine, 11, 3));
+        logicalRecordNumber = Integer.parseInt(eSubstring(censusDataLine, 19, 6));
+        logicalRecordPartNumber = Integer.parseInt(eSubstring(censusDataLine, 25, 4));
+        totalNumberOfPartsInRecord = Integer.parseInt(eSubstring(censusDataLine, 29, 4));
 
         // Population
-        persons = Integer.parseInt(censusDataLine.substring(301, 309));
+        persons = Integer.parseInt(eSubstring(censusDataLine, 301, 9));
 
         // Urban and Rural
-        insideUrbanizedArea = Integer.parseInt(censusDataLine.substring(328, 336));
-        outsideUrbanizedArea = Integer.parseInt(censusDataLine.substring(337, 345));
+        insideUrbanizedArea = Integer.parseInt(eSubstring(censusDataLine, 328, 9));
+        outsideUrbanizedArea = Integer.parseInt(eSubstring(censusDataLine, 337, 9));
 
         // Gender
-        male = Integer.parseInt(censusDataLine.substring(364, 372));
-        female = Integer.parseInt(censusDataLine.substring(373, 381));
+        male = Integer.parseInt(eSubstring(censusDataLine, 364, 9));
+        female = Integer.parseInt(eSubstring(censusDataLine, 373, 9));
     }
 
+    public String eSubstring(String string, int index, int offset)
+    {
+        int englishIndex = index - 1;
+        int englishEnd = index - 1 + offset;
+        return string.substring(englishIndex, englishEnd);
+    }
     public String getStateAbbreviation()
     {
         return stateAbbreviation;
