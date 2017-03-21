@@ -128,12 +128,72 @@ public class CensusData
     private final int femaleSeparated;
     private final int femaleWidowed;
 
+    // Tenure
+    private final int ownerOccupied;
+    private final int renterOccupied;
+
+    // Housing: Urban vs Rural
+
+    private final int urbanInsideUrbanizedArea;
+    private final int urbanOutsideUrbanizedArea;
+    private final int rural;
+    private final int urbanRuralNotDefined;
+
+    // Housing: rooms
+    private final int house1Room;
+    private final int house2Room;
+    private final int house3Room;
+    private final int house4Room;
+    private final int house5Room;
+    private final int house6Room;
+    private final int house7Room;
+    private final int house8Room;
+    private final int house9Room;
+
+    // Housing: value owner-occupied
+    private final int houseValueUnder15k;
+    private final int houseValue15kto20k;
+    private final int houseValue20kto25k;
+    private final int houseValue25kto30k;
+    private final int houseValue30kto35k;
+    private final int houseValue35kto40k;
+    private final int houseValue40kto45k;
+    private final int houseValue45kto50k;
+    private final int houseValue50kto60k;
+    private final int houseValue60kto75k;
+    private final int houseValue75kto100k;
+    private final int houseValue100kto125k;
+    private final int houseValue125kto150k;
+    private final int houseValue150kto175k;
+    private final int houseValue175kto200k;
+    private final int houseValue200kto250k;
+    private final int houseValue250kto300k;
+    private final int houseValue300kto400k;
+    private final int houseValue400kto500k;
+    private final int houseValue500kAndOver;
+
+    // Housing: rent
+    private final int rentUnder100;
+    private final int rent100To149;
+    private final int rent150To199;
+    private final int rent200To249;
+    private final int rent250To299;
+    private final int rent300To349;
+    private final int rent350To399;
+    private final int rent400To449;
+    private final int rent450To499;
+    private final int rent500To549;
+    private final int rent550To599;
+    private final int rent600To649;
+    private final int rent650To699;
+    private final int rent700To749;
+    private final int rent750To999;
+    private final int rentOver1000;
+    private final int rentNoCashRent;
 
 
     public CensusData(String censusDataLine)
     {
-        if (censusDataLine.length() < 300)
-            throw new IllegalArgumentException("Data Line length:" + censusDataLine.length());
 
         // Administrative Items
         stateAbbreviation = eSubstring(censusDataLine, 9, 2);
@@ -264,14 +324,84 @@ public class CensusData
         femaleSeparated = Integer.parseInt(eSubstring(censusDataLine, 4486, 9));
         femaleWidowed = Integer.parseInt(eSubstring(censusDataLine, 4495, 9));
 
+        // Tenure
+        ownerOccupied = Integer.parseInt(eSubstring(censusDataLine, 1804, 9));
+        renterOccupied = Integer.parseInt(eSubstring(censusDataLine, 1813, 9));
+
+        // Houses: Urban vs Rural
+        urbanInsideUrbanizedArea = Integer.parseInt(eSubstring(censusDataLine, 1822, 9));
+        urbanOutsideUrbanizedArea = Integer.parseInt(eSubstring(censusDataLine, 1831, 9));
+        rural = Integer.parseInt(eSubstring(censusDataLine, 1840, 9));
+        urbanRuralNotDefined = Integer.parseInt(eSubstring(censusDataLine, 1849, 9));
+
+        // Housing: rooms
+        house1Room = Integer.parseInt(eSubstring(censusDataLine, 2389, 9));
+        house2Room = Integer.parseInt(eSubstring(censusDataLine, 2398, 9));
+        house3Room = Integer.parseInt(eSubstring(censusDataLine, 2407, 9));
+        house4Room = Integer.parseInt(eSubstring(censusDataLine, 2416, 9));
+        house5Room = Integer.parseInt(eSubstring(censusDataLine, 2425, 9));
+        house6Room = Integer.parseInt(eSubstring(censusDataLine, 2434, 9));
+        house7Room = Integer.parseInt(eSubstring(censusDataLine, 2443, 9));
+        house8Room = Integer.parseInt(eSubstring(censusDataLine, 2452, 9));
+        house9Room = Integer.parseInt(eSubstring(censusDataLine, 2461, 9));
+
+        // Housing: value owner-occupied
+        houseValueUnder15k = Integer.parseInt(eSubstring(censusDataLine, 2929, 9));
+        houseValue15kto20k = Integer.parseInt(eSubstring(censusDataLine, 2938, 9));
+        houseValue20kto25k = Integer.parseInt(eSubstring(censusDataLine, 2947, 9));
+        houseValue25kto30k = Integer.parseInt(eSubstring(censusDataLine, 2956, 9));
+        houseValue30kto35k = Integer.parseInt(eSubstring(censusDataLine, 2965, 9));
+        houseValue35kto40k = Integer.parseInt(eSubstring(censusDataLine, 2974, 9));
+        houseValue40kto45k = Integer.parseInt(eSubstring(censusDataLine, 2983, 9));
+        houseValue45kto50k = Integer.parseInt(eSubstring(censusDataLine, 2992, 9));
+        houseValue50kto60k = Integer.parseInt(eSubstring(censusDataLine, 3001, 9));
+        houseValue60kto75k = Integer.parseInt(eSubstring(censusDataLine, 3010, 9));
+        houseValue75kto100k = Integer.parseInt(eSubstring(censusDataLine, 3019, 9));
+        houseValue100kto125k = Integer.parseInt(eSubstring(censusDataLine, 3028, 9));
+        houseValue125kto150k = Integer.parseInt(eSubstring(censusDataLine, 3037, 9));
+        houseValue150kto175k = Integer.parseInt(eSubstring(censusDataLine, 3046, 9));
+        houseValue175kto200k = Integer.parseInt(eSubstring(censusDataLine, 3055, 9));
+        houseValue200kto250k = Integer.parseInt(eSubstring(censusDataLine, 3064, 9));
+        houseValue250kto300k = Integer.parseInt(eSubstring(censusDataLine, 3073, 9));
+        houseValue300kto400k = Integer.parseInt(eSubstring(censusDataLine, 3082, 9));
+        houseValue400kto500k = Integer.parseInt(eSubstring(censusDataLine, 3091, 9));
+        houseValue500kAndOver = Integer.parseInt(eSubstring(censusDataLine, 3100, 9));
+
+        // Housing: rent
+        rentUnder100 = Integer.parseInt(eSubstring(censusDataLine, 3451, 9));
+        rent100To149 = Integer.parseInt(eSubstring(censusDataLine, 3460, 9));
+        rent150To199 = Integer.parseInt(eSubstring(censusDataLine, 3469, 9));
+        rent200To249 = Integer.parseInt(eSubstring(censusDataLine, 3478, 9));
+        rent250To299 = Integer.parseInt(eSubstring(censusDataLine, 3487, 9));
+        rent300To349 = Integer.parseInt(eSubstring(censusDataLine, 3496, 9));
+        rent350To399 = Integer.parseInt(eSubstring(censusDataLine, 3505, 9));
+        rent400To449 = Integer.parseInt(eSubstring(censusDataLine, 3514, 9));
+        rent450To499 = Integer.parseInt(eSubstring(censusDataLine, 3523, 9));
+        rent500To549 = Integer.parseInt(eSubstring(censusDataLine, 3532, 9));
+        rent550To599 = Integer.parseInt(eSubstring(censusDataLine, 3541, 9));
+        rent600To649 = Integer.parseInt(eSubstring(censusDataLine, 3550, 9));
+        rent650To699 = Integer.parseInt(eSubstring(censusDataLine, 3559, 9));
+        rent700To749 = Integer.parseInt(eSubstring(censusDataLine, 3568, 9));
+        rent750To999 = Integer.parseInt(eSubstring(censusDataLine, 3577, 9));
+        rentOver1000 = Integer.parseInt(eSubstring(censusDataLine, 3586, 9));
+        rentNoCashRent = Integer.parseInt(eSubstring(censusDataLine, 3595, 9));
     }
 
+    /**
+     * English friendly substring using offset
+     *
+     * @param string value to return the substring from
+     * @param index  starting index
+     * @param offset number of characters
+     * @return substring of string, starting at index, for offset characters
+     */
     public static String eSubstring(String string, int index, int offset)
     {
         int englishIndex = index - 1;
         int englishEnd = index - 1 + offset;
         return string.substring(englishIndex, englishEnd);
     }
+
     public String getStateAbbreviation()
     {
         return stateAbbreviation;
