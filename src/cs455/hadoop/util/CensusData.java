@@ -19,6 +19,9 @@ public class CensusData
 
     public CensusData(String censusDataLine)
     {
+        if (censusDataLine.length() < 300)
+            throw new IllegalArgumentException("Data Line length:" + censusDataLine.length());
+
         // Administrative Items
         stateAbbreviation = censusDataLine.substring(9, 2);
         summaryLevel = Integer.parseInt(censusDataLine.substring(11, 3));
