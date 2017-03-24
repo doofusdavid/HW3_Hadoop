@@ -19,7 +19,7 @@ public class Q1Mapper extends Mapper<LongWritable, Text, Text, IntWritable>
         {
             context.write(new Text(data.getStateAbbreviation() + " - Rent"), new IntWritable(data.getRenterOccupied()));
             context.write(new Text(data.getStateAbbreviation() + " - Own"), new IntWritable(data.getOwnerOccupied()));
-            context.write(new Text(data.getStateAbbreviation() + " - Total"), new IntWritable(data.getOwnerOccupied() + data.getRenterOccupied()));
+            // context.write(new Text(data.getStateAbbreviation() + " - Total"), new IntWritable(data.getOwnerOccupied() + data.getRenterOccupied()));
             context.getCounter(State.valueOfAbbreviation(data.getStateAbbreviation())).increment(data.getOwnerOccupied() + data.getRenterOccupied());
         }
     }

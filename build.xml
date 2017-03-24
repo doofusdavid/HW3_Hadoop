@@ -29,6 +29,11 @@
         <mkdir dir="${dist}"/>
         <jar jarfile="${dist}/hw3_hadoop.jar" basedir="${build}"/>
     </target>
+    <target name="distToHadoop" depends="dist" description="Sends to Hadoop Docker">
+        <copy todir="/Users/david/Repos/hadoop/share/dist">
+            <fileset dir="${dist}"/>
+        </copy>
+    </target>
     <target name="clean"
             description="clean up">
         <!-- Delete the ${build} and ${dist} directory trees -->

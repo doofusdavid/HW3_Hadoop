@@ -20,7 +20,7 @@ public class WordCountJob
         {
             Configuration conf = new Configuration();
 
-            Job job = Job.getInstance(conf, "cdedward word count");
+            Job job = Job.getInstance(conf, "cdedward_word_count");
             job.setJarByClass(WordCountJob.class);
             job.setMapperClass(WordCountMapper.class);
             job.setCombinerClass(WordCountReducer.class);

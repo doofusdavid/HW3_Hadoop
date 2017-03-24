@@ -196,194 +196,195 @@ public class CensusData
 
         // Administrative Items
         stateAbbreviation = eSubstring(censusDataLine, 9, 2);
-        summaryLevel = Integer.parseInt(eSubstring(censusDataLine, 11, 3));
-        logicalRecordNumber = Integer.parseInt(eSubstring(censusDataLine, 19, 6));
-        logicalRecordPartNumber = Integer.parseInt(eSubstring(censusDataLine, 25, 4));
-        totalNumberOfPartsInRecord = Integer.parseInt(eSubstring(censusDataLine, 29, 4));
+        summaryLevel = iSubstring(censusDataLine, 11, 3);
+        logicalRecordNumber = iSubstring(censusDataLine, 19, 6);
+        logicalRecordPartNumber = iSubstring(censusDataLine, 25, 4);
+        totalNumberOfPartsInRecord = iSubstring(censusDataLine, 29, 4);
 
         // Population
-        persons = Integer.parseInt(eSubstring(censusDataLine, 301, 9));
+        persons = iSubstring(censusDataLine, 301, 9);
 
         // Urban and Rural
-        insideUrbanizedArea = Integer.parseInt(eSubstring(censusDataLine, 328, 9));
-        outsideUrbanizedArea = Integer.parseInt(eSubstring(censusDataLine, 337, 9));
+        insideUrbanizedArea = iSubstring(censusDataLine, 328, 9);
+        outsideUrbanizedArea = iSubstring(censusDataLine, 337, 9);
 
         // Gender
-        male = Integer.parseInt(eSubstring(censusDataLine, 364, 9));
-        female = Integer.parseInt(eSubstring(censusDataLine, 373, 9));
+        male = iSubstring(censusDataLine, 364, 9);
+        female = iSubstring(censusDataLine, 373, 9);
 
         // Age
-        ageUnder1 = Integer.parseInt(eSubstring(censusDataLine, 796, 9));
-        ageBetween1and2 = Integer.parseInt(eSubstring(censusDataLine, 805, 9));
-        ageBetween3and4 = Integer.parseInt(eSubstring(censusDataLine, 814, 9));
-        age5 = Integer.parseInt(eSubstring(censusDataLine, 823, 9));
-        age6 = Integer.parseInt(eSubstring(censusDataLine, 832, 9));
-        ageBetween7and9 = Integer.parseInt(eSubstring(censusDataLine, 841, 9));
-        ageBetween10and11 = Integer.parseInt(eSubstring(censusDataLine, 850, 9));
-        ageBetween12and13 = Integer.parseInt(eSubstring(censusDataLine, 859, 9));
-        age14 = Integer.parseInt(eSubstring(censusDataLine, 868, 9));
-        age15 = Integer.parseInt(eSubstring(censusDataLine, 877, 9));
-        age16 = Integer.parseInt(eSubstring(censusDataLine, 886, 9));
-        age17 = Integer.parseInt(eSubstring(censusDataLine, 895, 9));
-        age18 = Integer.parseInt(eSubstring(censusDataLine, 904, 9));
-        age19 = Integer.parseInt(eSubstring(censusDataLine, 913, 9));
-        age20 = Integer.parseInt(eSubstring(censusDataLine, 922, 9));
-        age21 = Integer.parseInt(eSubstring(censusDataLine, 931, 9));
-        ageBetween22and24 = Integer.parseInt(eSubstring(censusDataLine, 940, 9));
-        ageBetween25and29 = Integer.parseInt(eSubstring(censusDataLine, 949, 9));
-        ageBetween30and34 = Integer.parseInt(eSubstring(censusDataLine, 958, 9));
-        ageBetween35and39 = Integer.parseInt(eSubstring(censusDataLine, 967, 9));
-        ageBetween40and44 = Integer.parseInt(eSubstring(censusDataLine, 976, 9));
-        ageBetween45and49 = Integer.parseInt(eSubstring(censusDataLine, 985, 9));
-        ageBetween50and54 = Integer.parseInt(eSubstring(censusDataLine, 994, 9));
-        ageBetween55and59 = Integer.parseInt(eSubstring(censusDataLine, 1003, 9));
-        ageBetween60and61 = Integer.parseInt(eSubstring(censusDataLine, 1012, 9));
-        ageBetween62and64 = Integer.parseInt(eSubstring(censusDataLine, 1021, 9));
-        ageBetween65and69 = Integer.parseInt(eSubstring(censusDataLine, 1030, 9));
-        ageBetween70and74 = Integer.parseInt(eSubstring(censusDataLine, 1039, 9));
-        ageBetween75and79 = Integer.parseInt(eSubstring(censusDataLine, 1048, 9));
-        ageBetween80and84 = Integer.parseInt(eSubstring(censusDataLine, 1057, 9));
-        age85andOver = Integer.parseInt(eSubstring(censusDataLine, 1066, 9));
+        ageUnder1 = iSubstring(censusDataLine, 796, 9);
+        ageBetween1and2 = iSubstring(censusDataLine, 805, 9);
+        ageBetween3and4 = iSubstring(censusDataLine, 814, 9);
+        age5 = iSubstring(censusDataLine, 823, 9);
+        age6 = iSubstring(censusDataLine, 832, 9);
+        ageBetween7and9 = iSubstring(censusDataLine, 841, 9);
+        ageBetween10and11 = iSubstring(censusDataLine, 850, 9);
+        ageBetween12and13 = iSubstring(censusDataLine, 859, 9);
+        age14 = iSubstring(censusDataLine, 868, 9);
+        age15 = iSubstring(censusDataLine, 877, 9);
+        age16 = iSubstring(censusDataLine, 886, 9);
+        age17 = iSubstring(censusDataLine, 895, 9);
+        age18 = iSubstring(censusDataLine, 904, 9);
+        age19 = iSubstring(censusDataLine, 913, 9);
+        age20 = iSubstring(censusDataLine, 922, 9);
+        age21 = iSubstring(censusDataLine, 931, 9);
+        ageBetween22and24 = iSubstring(censusDataLine, 940, 9);
+        ageBetween25and29 = iSubstring(censusDataLine, 949, 9);
+        ageBetween30and34 = iSubstring(censusDataLine, 958, 9);
+        ageBetween35and39 = iSubstring(censusDataLine, 967, 9);
+        ageBetween40and44 = iSubstring(censusDataLine, 976, 9);
+        ageBetween45and49 = iSubstring(censusDataLine, 985, 9);
+        ageBetween50and54 = iSubstring(censusDataLine, 994, 9);
+        ageBetween55and59 = iSubstring(censusDataLine, 1003, 9);
+        ageBetween60and61 = iSubstring(censusDataLine, 1012, 9);
+        ageBetween62and64 = iSubstring(censusDataLine, 1021, 9);
+        ageBetween65and69 = iSubstring(censusDataLine, 1030, 9);
+        ageBetween70and74 = iSubstring(censusDataLine, 1039, 9);
+        ageBetween75and79 = iSubstring(censusDataLine, 1048, 9);
+        ageBetween80and84 = iSubstring(censusDataLine, 1057, 9);
+        age85andOver = iSubstring(censusDataLine, 1066, 9);
 
         // Hispanic Male
-        hispanicMaleAgeUnder1 = Integer.parseInt(eSubstring(censusDataLine, 3865, 9));
-        hispanicMaleAgeBetween1and2 = Integer.parseInt(eSubstring(censusDataLine, 3874, 9));
-        hispanicMaleAgeBetween3and4 = Integer.parseInt(eSubstring(censusDataLine, 3883, 9));
-        hispanicMaleAge5 = Integer.parseInt(eSubstring(censusDataLine, 3892, 9));
-        hispanicMaleAge6 = Integer.parseInt(eSubstring(censusDataLine, 3901, 9));
-        hispanicMaleAgeBetween7and9 = Integer.parseInt(eSubstring(censusDataLine, 3910, 9));
-        hispanicMaleAgeBetween10and11 = Integer.parseInt(eSubstring(censusDataLine, 3919, 9));
-        hispanicMaleAgeBetween12and13 = Integer.parseInt(eSubstring(censusDataLine, 3928, 9));
-        hispanicMaleAge14 = Integer.parseInt(eSubstring(censusDataLine, 3937, 9));
-        hispanicMaleAge15 = Integer.parseInt(eSubstring(censusDataLine, 3946, 9));
-        hispanicMaleAge16 = Integer.parseInt(eSubstring(censusDataLine, 3955, 9));
-        hispanicMaleAge17 = Integer.parseInt(eSubstring(censusDataLine, 3964, 9));
-        hispanicMaleAge18 = Integer.parseInt(eSubstring(censusDataLine, 3973, 9));
-        hispanicMaleAge19 = Integer.parseInt(eSubstring(censusDataLine, 3982, 9));
-        hispanicMaleAge20 = Integer.parseInt(eSubstring(censusDataLine, 3991, 9));
-        hispanicMaleAge21 = Integer.parseInt(eSubstring(censusDataLine, 4000, 9));
-        hispanicMaleAgeBetween22and24 = Integer.parseInt(eSubstring(censusDataLine, 4009, 9));
-        hispanicMaleAgeBetween25and29 = Integer.parseInt(eSubstring(censusDataLine, 4018, 9));
-        hispanicMaleAgeBetween30and34 = Integer.parseInt(eSubstring(censusDataLine, 4027, 9));
-        hispanicMaleAgeBetween35and39 = Integer.parseInt(eSubstring(censusDataLine, 4036, 9));
-        hispanicMaleAgeBetween40and44 = Integer.parseInt(eSubstring(censusDataLine, 4045, 9));
-        hispanicMaleAgeBetween45and49 = Integer.parseInt(eSubstring(censusDataLine, 4054, 9));
-        hispanicMaleAgeBetween50and54 = Integer.parseInt(eSubstring(censusDataLine, 4063, 9));
-        hispanicMaleAgeBetween55and59 = Integer.parseInt(eSubstring(censusDataLine, 4072, 9));
-        hispanicMaleAgeBetween60and61 = Integer.parseInt(eSubstring(censusDataLine, 4081, 9));
-        hispanicMaleAgeBetween62and64 = Integer.parseInt(eSubstring(censusDataLine, 4090, 9));
-        hispanicMaleAgeBetween65and69 = Integer.parseInt(eSubstring(censusDataLine, 4099, 9));
-        hispanicMaleAgeBetween70and74 = Integer.parseInt(eSubstring(censusDataLine, 4108, 9));
-        hispanicMaleAgeBetween75and79 = Integer.parseInt(eSubstring(censusDataLine, 4117, 9));
-        hispanicMaleAgeBetween80and84 = Integer.parseInt(eSubstring(censusDataLine, 4126, 9));
-        hispanicMaleAge85andOver = Integer.parseInt(eSubstring(censusDataLine, 4135, 9));
+        hispanicMaleAgeUnder1 = iSubstring(censusDataLine, 3865, 9);
+        hispanicMaleAgeBetween1and2 = iSubstring(censusDataLine, 3874, 9);
+        hispanicMaleAgeBetween3and4 = iSubstring(censusDataLine, 3883, 9);
+        hispanicMaleAge5 = iSubstring(censusDataLine, 3892, 9);
+        hispanicMaleAge6 = iSubstring(censusDataLine, 3901, 9);
+        hispanicMaleAgeBetween7and9 = iSubstring(censusDataLine, 3910, 9);
+        hispanicMaleAgeBetween10and11 = iSubstring(censusDataLine, 3919, 9);
+        hispanicMaleAgeBetween12and13 = iSubstring(censusDataLine, 3928, 9);
+        hispanicMaleAge14 = iSubstring(censusDataLine, 3937, 9);
+        hispanicMaleAge15 = iSubstring(censusDataLine, 3946, 9);
+        hispanicMaleAge16 = iSubstring(censusDataLine, 3955, 9);
+        hispanicMaleAge17 = iSubstring(censusDataLine, 3964, 9);
+        hispanicMaleAge18 = iSubstring(censusDataLine, 3973, 9);
+        hispanicMaleAge19 = iSubstring(censusDataLine, 3982, 9);
+        hispanicMaleAge20 = iSubstring(censusDataLine, 3991, 9);
+        hispanicMaleAge21 = iSubstring(censusDataLine, 4000, 9);
+        hispanicMaleAgeBetween22and24 = iSubstring(censusDataLine, 4009, 9);
+        hispanicMaleAgeBetween25and29 = iSubstring(censusDataLine, 4018, 9);
+        hispanicMaleAgeBetween30and34 = iSubstring(censusDataLine, 4027, 9);
+        hispanicMaleAgeBetween35and39 = iSubstring(censusDataLine, 4036, 9);
+        hispanicMaleAgeBetween40and44 = iSubstring(censusDataLine, 4045, 9);
+        hispanicMaleAgeBetween45and49 = iSubstring(censusDataLine, 4054, 9);
+        hispanicMaleAgeBetween50and54 = iSubstring(censusDataLine, 4063, 9);
+        hispanicMaleAgeBetween55and59 = iSubstring(censusDataLine, 4072, 9);
+        hispanicMaleAgeBetween60and61 = iSubstring(censusDataLine, 4081, 9);
+        hispanicMaleAgeBetween62and64 = iSubstring(censusDataLine, 4090, 9);
+        hispanicMaleAgeBetween65and69 = iSubstring(censusDataLine, 4099, 9);
+        hispanicMaleAgeBetween70and74 = iSubstring(censusDataLine, 4108, 9);
+        hispanicMaleAgeBetween75and79 = iSubstring(censusDataLine, 4117, 9);
+        hispanicMaleAgeBetween80and84 = iSubstring(censusDataLine, 4126, 9);
+        hispanicMaleAge85andOver = iSubstring(censusDataLine, 4135, 9);
 
         // Hispanic Female
-        hispanicFemaleAgeUnder1 = Integer.parseInt(eSubstring(censusDataLine, 4144, 9));
-        hispanicFemaleAgeBetween1and2 = Integer.parseInt(eSubstring(censusDataLine, 4153, 9));
-        hispanicFemaleAgeBetween3and4 = Integer.parseInt(eSubstring(censusDataLine, 4162, 9));
-        hispanicFemaleAge5 = Integer.parseInt(eSubstring(censusDataLine, 4171, 9));
-        hispanicFemaleAge6 = Integer.parseInt(eSubstring(censusDataLine, 4180, 9));
-        hispanicFemaleAgeBetween7and9 = Integer.parseInt(eSubstring(censusDataLine, 4189, 9));
-        hispanicFemaleAgeBetween10and11 = Integer.parseInt(eSubstring(censusDataLine, 4198, 9));
-        hispanicFemaleAgeBetween12and13 = Integer.parseInt(eSubstring(censusDataLine, 4207, 9));
-        hispanicFemaleAge14 = Integer.parseInt(eSubstring(censusDataLine, 4216, 9));
-        hispanicFemaleAge15 = Integer.parseInt(eSubstring(censusDataLine, 4225, 9));
-        hispanicFemaleAge16 = Integer.parseInt(eSubstring(censusDataLine, 4234, 9));
-        hispanicFemaleAge17 = Integer.parseInt(eSubstring(censusDataLine, 4243, 9));
-        hispanicFemaleAge18 = Integer.parseInt(eSubstring(censusDataLine, 4252, 9));
-        hispanicFemaleAge19 = Integer.parseInt(eSubstring(censusDataLine, 4261, 9));
-        hispanicFemaleAge20 = Integer.parseInt(eSubstring(censusDataLine, 4270, 9));
-        hispanicFemaleAge21 = Integer.parseInt(eSubstring(censusDataLine, 4279, 9));
-        hispanicFemaleAgeBetween22and24 = Integer.parseInt(eSubstring(censusDataLine, 4288, 9));
-        hispanicFemaleAgeBetween25and29 = Integer.parseInt(eSubstring(censusDataLine, 4297, 9));
-        hispanicFemaleAgeBetween30and34 = Integer.parseInt(eSubstring(censusDataLine, 4306, 9));
-        hispanicFemaleAgeBetween35and39 = Integer.parseInt(eSubstring(censusDataLine, 4315, 9));
-        hispanicFemaleAgeBetween40and44 = Integer.parseInt(eSubstring(censusDataLine, 4324, 9));
-        hispanicFemaleAgeBetween45and49 = Integer.parseInt(eSubstring(censusDataLine, 4333, 9));
-        hispanicFemaleAgeBetween50and54 = Integer.parseInt(eSubstring(censusDataLine, 4342, 9));
-        hispanicFemaleAgeBetween55and59 = Integer.parseInt(eSubstring(censusDataLine, 4351, 9));
-        hispanicFemaleAgeBetween60and61 = Integer.parseInt(eSubstring(censusDataLine, 4360, 9));
-        hispanicFemaleAgeBetween62and64 = Integer.parseInt(eSubstring(censusDataLine, 4369, 9));
-        hispanicFemaleAgeBetween65and69 = Integer.parseInt(eSubstring(censusDataLine, 4378, 9));
-        hispanicFemaleAgeBetween70and74 = Integer.parseInt(eSubstring(censusDataLine, 4387, 9));
-        hispanicFemaleAgeBetween75and79 = Integer.parseInt(eSubstring(censusDataLine, 4396, 9));
-        hispanicFemaleAgeBetween80and84 = Integer.parseInt(eSubstring(censusDataLine, 4405, 9));
-        hispanicFemaleAge85andOver = Integer.parseInt(eSubstring(censusDataLine, 4414, 9));
+        hispanicFemaleAgeUnder1 = iSubstring(censusDataLine, 4144, 9);
+        hispanicFemaleAgeBetween1and2 = iSubstring(censusDataLine, 4153, 9);
+        hispanicFemaleAgeBetween3and4 = iSubstring(censusDataLine, 4162, 9);
+        hispanicFemaleAge5 = iSubstring(censusDataLine, 4171, 9);
+        hispanicFemaleAge6 = iSubstring(censusDataLine, 4180, 9);
+        hispanicFemaleAgeBetween7and9 = iSubstring(censusDataLine, 4189, 9);
+        hispanicFemaleAgeBetween10and11 = iSubstring(censusDataLine, 4198, 9);
+        hispanicFemaleAgeBetween12and13 = iSubstring(censusDataLine, 4207, 9);
+        hispanicFemaleAge14 = iSubstring(censusDataLine, 4216, 9);
+        hispanicFemaleAge15 = iSubstring(censusDataLine, 4225, 9);
+        hispanicFemaleAge16 = iSubstring(censusDataLine, 4234, 9);
+        hispanicFemaleAge17 = iSubstring(censusDataLine, 4243, 9);
+        hispanicFemaleAge18 = iSubstring(censusDataLine, 4252, 9);
+        hispanicFemaleAge19 = iSubstring(censusDataLine, 4261, 9);
+        hispanicFemaleAge20 = iSubstring(censusDataLine, 4270, 9);
+        hispanicFemaleAge21 = iSubstring(censusDataLine, 4279, 9);
+        hispanicFemaleAgeBetween22and24 = iSubstring(censusDataLine, 4288, 9);
+        hispanicFemaleAgeBetween25and29 = iSubstring(censusDataLine, 4297, 9);
+        hispanicFemaleAgeBetween30and34 = iSubstring(censusDataLine, 4306, 9);
+        hispanicFemaleAgeBetween35and39 = iSubstring(censusDataLine, 4315, 9);
+        hispanicFemaleAgeBetween40and44 = iSubstring(censusDataLine, 4324, 9);
+        hispanicFemaleAgeBetween45and49 = iSubstring(censusDataLine, 4333, 9);
+        hispanicFemaleAgeBetween50and54 = iSubstring(censusDataLine, 4342, 9);
+        hispanicFemaleAgeBetween55and59 = iSubstring(censusDataLine, 4351, 9);
+        hispanicFemaleAgeBetween60and61 = iSubstring(censusDataLine, 4360, 9);
+        hispanicFemaleAgeBetween62and64 = iSubstring(censusDataLine, 4369, 9);
+        hispanicFemaleAgeBetween65and69 = iSubstring(censusDataLine, 4378, 9);
+        hispanicFemaleAgeBetween70and74 = iSubstring(censusDataLine, 4387, 9);
+        hispanicFemaleAgeBetween75and79 = iSubstring(censusDataLine, 4396, 9);
+        hispanicFemaleAgeBetween80and84 = iSubstring(censusDataLine, 4405, 9);
+        hispanicFemaleAge85andOver = iSubstring(censusDataLine, 4414, 9);
 
         // Male Marriage Status
-        maleNeverMarried = Integer.parseInt(eSubstring(censusDataLine, 4423, 9));
-        maleMarriedButSeparated = Integer.parseInt(eSubstring(censusDataLine, 4432, 9));
-        maleSeparated = Integer.parseInt(eSubstring(censusDataLine, 4441, 9));
-        maleWidowed = Integer.parseInt(eSubstring(censusDataLine, 4450, 9));
+        maleNeverMarried = iSubstring(censusDataLine, 4423, 9);
+        maleMarriedButSeparated = iSubstring(censusDataLine, 4432, 9);
+        maleSeparated = iSubstring(censusDataLine, 4441, 9);
+        maleWidowed = iSubstring(censusDataLine, 4450, 9);
 
         // Female Marriage Status
-        femaleNeverMarried = Integer.parseInt(eSubstring(censusDataLine, 4468, 9));
-        femaleMarriedButSeparated = Integer.parseInt(eSubstring(censusDataLine, 4477, 9));
-        femaleSeparated = Integer.parseInt(eSubstring(censusDataLine, 4486, 9));
-        femaleWidowed = Integer.parseInt(eSubstring(censusDataLine, 4495, 9));
+        femaleNeverMarried = iSubstring(censusDataLine, 4468, 9);
+        femaleMarriedButSeparated = iSubstring(censusDataLine, 4477, 9);
+        femaleSeparated = iSubstring(censusDataLine, 4486, 9);
+        femaleWidowed = iSubstring(censusDataLine, 4495, 9);
 
         // Tenure
-        ownerOccupied = Integer.parseInt(eSubstring(censusDataLine, 1804, 9));
-        renterOccupied = Integer.parseInt(eSubstring(censusDataLine, 1813, 9));
+        ownerOccupied = iSubstring(censusDataLine, 1804, 9);
+        renterOccupied = iSubstring(censusDataLine, 1813, 9);
 
         // Houses: Urban vs Rural
-        urbanInsideUrbanizedArea = Integer.parseInt(eSubstring(censusDataLine, 1822, 9));
-        urbanOutsideUrbanizedArea = Integer.parseInt(eSubstring(censusDataLine, 1831, 9));
-        rural = Integer.parseInt(eSubstring(censusDataLine, 1840, 9));
-        urbanRuralNotDefined = Integer.parseInt(eSubstring(censusDataLine, 1849, 9));
+        urbanInsideUrbanizedArea = iSubstring(censusDataLine, 1822, 9);
+        urbanOutsideUrbanizedArea = iSubstring(censusDataLine, 1831, 9);
+        rural = iSubstring(censusDataLine, 1840, 9);
+        urbanRuralNotDefined = iSubstring(censusDataLine, 1849, 9);
 
         // Housing: rooms
-        house1Room = Integer.parseInt(eSubstring(censusDataLine, 2389, 9));
-        house2Room = Integer.parseInt(eSubstring(censusDataLine, 2398, 9));
-        house3Room = Integer.parseInt(eSubstring(censusDataLine, 2407, 9));
-        house4Room = Integer.parseInt(eSubstring(censusDataLine, 2416, 9));
-        house5Room = Integer.parseInt(eSubstring(censusDataLine, 2425, 9));
-        house6Room = Integer.parseInt(eSubstring(censusDataLine, 2434, 9));
-        house7Room = Integer.parseInt(eSubstring(censusDataLine, 2443, 9));
-        house8Room = Integer.parseInt(eSubstring(censusDataLine, 2452, 9));
-        house9Room = Integer.parseInt(eSubstring(censusDataLine, 2461, 9));
+        house1Room = iSubstring(censusDataLine, 2389, 9);
+        house2Room = iSubstring(censusDataLine, 2398, 9);
+        house3Room = iSubstring(censusDataLine, 2407, 9);
+        house4Room = iSubstring(censusDataLine, 2416, 9);
+        house5Room = iSubstring(censusDataLine, 2425, 9);
+        house6Room = iSubstring(censusDataLine, 2434, 9);
+        house7Room = iSubstring(censusDataLine, 2443, 9);
+        house8Room = iSubstring(censusDataLine, 2452, 9);
+        house9Room = iSubstring(censusDataLine, 2461, 9);
 
         // Housing: value owner-occupied
-        houseValueUnder15k = Integer.parseInt(eSubstring(censusDataLine, 2929, 9));
-        houseValue15kto20k = Integer.parseInt(eSubstring(censusDataLine, 2938, 9));
-        houseValue20kto25k = Integer.parseInt(eSubstring(censusDataLine, 2947, 9));
-        houseValue25kto30k = Integer.parseInt(eSubstring(censusDataLine, 2956, 9));
-        houseValue30kto35k = Integer.parseInt(eSubstring(censusDataLine, 2965, 9));
-        houseValue35kto40k = Integer.parseInt(eSubstring(censusDataLine, 2974, 9));
-        houseValue40kto45k = Integer.parseInt(eSubstring(censusDataLine, 2983, 9));
-        houseValue45kto50k = Integer.parseInt(eSubstring(censusDataLine, 2992, 9));
-        houseValue50kto60k = Integer.parseInt(eSubstring(censusDataLine, 3001, 9));
-        houseValue60kto75k = Integer.parseInt(eSubstring(censusDataLine, 3010, 9));
-        houseValue75kto100k = Integer.parseInt(eSubstring(censusDataLine, 3019, 9));
-        houseValue100kto125k = Integer.parseInt(eSubstring(censusDataLine, 3028, 9));
-        houseValue125kto150k = Integer.parseInt(eSubstring(censusDataLine, 3037, 9));
-        houseValue150kto175k = Integer.parseInt(eSubstring(censusDataLine, 3046, 9));
-        houseValue175kto200k = Integer.parseInt(eSubstring(censusDataLine, 3055, 9));
-        houseValue200kto250k = Integer.parseInt(eSubstring(censusDataLine, 3064, 9));
-        houseValue250kto300k = Integer.parseInt(eSubstring(censusDataLine, 3073, 9));
-        houseValue300kto400k = Integer.parseInt(eSubstring(censusDataLine, 3082, 9));
-        houseValue400kto500k = Integer.parseInt(eSubstring(censusDataLine, 3091, 9));
-        houseValue500kAndOver = Integer.parseInt(eSubstring(censusDataLine, 3100, 9));
+        houseValueUnder15k = iSubstring(censusDataLine, 2929, 9);
+        houseValue15kto20k = iSubstring(censusDataLine, 2938, 9);
+        houseValue20kto25k = iSubstring(censusDataLine, 2947, 9);
+        houseValue25kto30k = iSubstring(censusDataLine, 2956, 9);
+        houseValue30kto35k = iSubstring(censusDataLine, 2965, 9);
+        houseValue35kto40k = iSubstring(censusDataLine, 2974, 9);
+        houseValue40kto45k = iSubstring(censusDataLine, 2983, 9);
+        houseValue45kto50k = iSubstring(censusDataLine, 2992, 9);
+        houseValue50kto60k = iSubstring(censusDataLine, 3001, 9);
+        houseValue60kto75k = iSubstring(censusDataLine, 3010, 9);
+        houseValue75kto100k = iSubstring(censusDataLine, 3019, 9);
+        houseValue100kto125k = iSubstring(censusDataLine, 3028, 9);
+        houseValue125kto150k = iSubstring(censusDataLine, 3037, 9);
+        houseValue150kto175k = iSubstring(censusDataLine, 3046, 9);
+        houseValue175kto200k = iSubstring(censusDataLine, 3055, 9);
+        houseValue200kto250k = iSubstring(censusDataLine, 3064, 9);
+        houseValue250kto300k = iSubstring(censusDataLine, 3073, 9);
+        houseValue300kto400k = iSubstring(censusDataLine, 3082, 9);
+        houseValue400kto500k = iSubstring(censusDataLine, 3091, 9);
+        houseValue500kAndOver = iSubstring(censusDataLine, 3100, 9);
 
         // Housing: rent
-        rentUnder100 = Integer.parseInt(eSubstring(censusDataLine, 3451, 9));
-        rent100To149 = Integer.parseInt(eSubstring(censusDataLine, 3460, 9));
-        rent150To199 = Integer.parseInt(eSubstring(censusDataLine, 3469, 9));
-        rent200To249 = Integer.parseInt(eSubstring(censusDataLine, 3478, 9));
-        rent250To299 = Integer.parseInt(eSubstring(censusDataLine, 3487, 9));
-        rent300To349 = Integer.parseInt(eSubstring(censusDataLine, 3496, 9));
-        rent350To399 = Integer.parseInt(eSubstring(censusDataLine, 3505, 9));
-        rent400To449 = Integer.parseInt(eSubstring(censusDataLine, 3514, 9));
-        rent450To499 = Integer.parseInt(eSubstring(censusDataLine, 3523, 9));
-        rent500To549 = Integer.parseInt(eSubstring(censusDataLine, 3532, 9));
-        rent550To599 = Integer.parseInt(eSubstring(censusDataLine, 3541, 9));
-        rent600To649 = Integer.parseInt(eSubstring(censusDataLine, 3550, 9));
-        rent650To699 = Integer.parseInt(eSubstring(censusDataLine, 3559, 9));
-        rent700To749 = Integer.parseInt(eSubstring(censusDataLine, 3568, 9));
-        rent750To999 = Integer.parseInt(eSubstring(censusDataLine, 3577, 9));
-        rentOver1000 = Integer.parseInt(eSubstring(censusDataLine, 3586, 9));
-        rentNoCashRent = Integer.parseInt(eSubstring(censusDataLine, 3595, 9));
+        rentUnder100 = iSubstring(censusDataLine, 3451, 9);
+        rent100To149 = iSubstring(censusDataLine, 3460, 9);
+        rent150To199 = iSubstring(censusDataLine, 3469, 9);
+        rent200To249 = iSubstring(censusDataLine, 3478, 9);
+        rent250To299 = iSubstring(censusDataLine, 3487, 9);
+        rent300To349 = iSubstring(censusDataLine, 3496, 9);
+        rent350To399 = iSubstring(censusDataLine, 3505, 9);
+        rent400To449 = iSubstring(censusDataLine, 3514, 9);
+        rent450To499 = iSubstring(censusDataLine, 3523, 9);
+        rent500To549 = iSubstring(censusDataLine, 3532, 9);
+        rent550To599 = iSubstring(censusDataLine, 3541, 9);
+        rent600To649 = iSubstring(censusDataLine, 3550, 9);
+        rent650To699 = iSubstring(censusDataLine, 3559, 9);
+        rent700To749 = iSubstring(censusDataLine, 3568, 9);
+        rent750To999 = iSubstring(censusDataLine, 3577, 9);
+        rentOver1000 = iSubstring(censusDataLine, 3586, 9);
+        rentNoCashRent = iSubstring(censusDataLine, 3595, 9);
+
     }
 
     /**
@@ -399,6 +400,15 @@ public class CensusData
         int englishIndex = index - 1;
         int englishEnd = index - 1 + offset;
         return string.substring(englishIndex, englishEnd);
+    }
+
+    public static int iSubstring(String string, int index, int offset)
+    {
+        String result = eSubstring(string, index, offset);
+        if (result.trim().equals(""))
+            return 0;
+        else
+            return Integer.parseInt(result.trim());
     }
 
     public String getStateAbbreviation()
