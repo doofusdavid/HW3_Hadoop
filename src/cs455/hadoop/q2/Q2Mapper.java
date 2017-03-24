@@ -1,8 +1,18 @@
 package cs455.hadoop.q2;
 
-/**
- * Created by david on 3/21/17.
- */
-public class Q2Mapper
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Mapper;
+
+import java.io.IOException;
+
+
+public class Q2Mapper extends Mapper<LongWritable, Text, Text, IntWritable>
 {
+    @Override
+    protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException
+    {
+        super.map(key, value, context);
+    }
 }
