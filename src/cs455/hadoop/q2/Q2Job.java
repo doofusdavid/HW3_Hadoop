@@ -1,14 +1,11 @@
 package cs455.hadoop.q2;
 
 
-import cs455.hadoop.util.State;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
-import org.apache.hadoop.mapreduce.Counter;
 import org.apache.hadoop.mapreduce.Counters;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
@@ -33,10 +30,10 @@ public class Q2Job
             job.setReducerClass(Q2Reducer.class);
 
             job.setMapOutputKeyClass(Text.class);
-            job.setMapOutputValueClass(IntWritable.class);
+            job.setMapOutputValueClass(Text.class);
 
             job.setOutputKeyClass(Text.class);
-            job.setOutputValueClass(IntWritable.class);
+            job.setOutputValueClass(Text.class);
 
             FileInputFormat.addInputPath(job, new Path(args[0]));
             FileOutputFormat.setOutputPath(job, new Path(args[1]));
@@ -51,12 +48,13 @@ public class Q2Job
             while ((line = reader.readLine()) != null)
             {
                 String[] keyval = line.split("\\t");
-                String[] keysplit = keyval[0].split("\\s+");
-                Counter counter = counters.findCounter(State.valueOfAbbreviation(keysplit[0]));
+                String[] keysplit = keyval[0].split("\\|");
+                String[] valsplit = keyval[1].split("\\|");
 
-                double percentage = Float.parseFloat(keyval[1]) / counter.getValue() * 100.0;
-                String outputLine = line + String.format(" - Percentage: %.2f%% \n", percentage);
-                System.out.println(outputLine);
+                double malePercent = Double.parseDouble(valsplit[0]) / Double.parseDouble(valsplit[2]) * 100.0;
+                double femalePercent = Double.parseDouble(valsplit[1]) / Double.parseDouble(valsplit[3]) * 100.0;
+
+                String outputLine = String.format("%s - Male Unmarried: %.2f%% - Male Total: %s - Female Unmarried: %.2f%% - Female total: %s\n", keysplit[0], malePercent, valsplit[2], femalePercent, valsplit[3]);
                 outputStream.writeChars(outputLine);
             }
             outputStream.flush();
