@@ -2,6 +2,7 @@ package cs455.hadoop.q1;
 
 import cs455.hadoop.util.State;
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
@@ -44,6 +45,8 @@ public class Q1Job
             FileSystem fs = FileSystem.get(conf);
             BufferedReader reader = new BufferedReader(new InputStreamReader(fs.open(new Path(args[1] + "/part-r-00000"))));
             String line = null;
+            FSDataOutputStream outputStream = fs.create(new Path(args[1] + "/finalResults.txt"));
+
             while ((line = reader.readLine()) != null)
             {
                 String[] keyval = line.split("\\t");
@@ -51,9 +54,12 @@ public class Q1Job
                 Counter counter = counters.findCounter(State.valueOfAbbreviation(keysplit[0]));
 
                 double percentage = Float.parseFloat(keyval[1]) / counter.getValue() * 100.0;
-                System.out.println(line + " - Percentage: " + percentage);
+                String outputLine = line + String.format(" - Percentage: %.2f%% \n", percentage);
+                System.out.println(outputLine);
+                outputStream.writeChars(outputLine);
             }
-
+            outputStream.flush();
+            outputStream.close();
 //            job.waitForCompletion(true);
 //
 //            Job job2 = Job.getInstance(conf, "cdedward Q1 aggregation");
