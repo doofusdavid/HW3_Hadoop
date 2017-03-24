@@ -34,6 +34,11 @@
             <fileset dir="${dist}"/>
         </copy>
     </target>
+    <target name="distToHonolulu" depends="dist" description="Sends to Honolulu">
+        <copy todir="/Volumes/Honolulu/cs455/hw3_hadoop/dist">
+            <fileset dir="${dist}"/>
+        </copy>
+    </target>
     <target name="clean"
             description="clean up">
         <!-- Delete the ${build} and ${dist} directory trees -->
