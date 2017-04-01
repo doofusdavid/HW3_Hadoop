@@ -83,5 +83,9 @@ public class Q4Job
         {
             e.printStackTrace();
         }
+        catch (NumberFormatException nbe)
+        {
+            nbe.printStackTrace();
+        }
     }
 }
