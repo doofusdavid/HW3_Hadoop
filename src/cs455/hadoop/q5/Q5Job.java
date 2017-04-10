@@ -1,7 +1,5 @@
 package cs455.hadoop.q5;
 
-
-import cs455.hadoop.q2.Q2Job;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileSystem;
@@ -26,7 +24,7 @@ public class Q5Job
             Configuration conf = new Configuration();
 
             Job job = Job.getInstance(conf, "cdedward Q5 Job");
-            job.setJarByClass(Q2Job.class);
+            job.setJarByClass(Q5Job.class);
             job.setMapperClass(Q5Mapper.class);
             job.setCombinerClass(Q5Reducer.class);
             job.setReducerClass(Q5Reducer.class);
