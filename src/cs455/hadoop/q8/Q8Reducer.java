@@ -17,7 +17,7 @@ public class Q8Reducer extends Reducer<Text, Text, Text, Text>
         {
             String[] value = val.toString().split("\\|");
             over85Count += Integer.parseInt(value[0]);
-            totalPersonCount += Integer.parseInt(value[0]);
+            totalPersonCount += Integer.parseInt(value[1]);
         }
 
         context.write(key, new Text(String.format("%s|%s", over85Count, totalPersonCount)));

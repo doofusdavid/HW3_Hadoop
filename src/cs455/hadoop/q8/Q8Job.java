@@ -60,7 +60,7 @@ public class Q8Job
             statePercentages = MapUtil.sortByValue(statePercentages);
             for (Map.Entry<String, Double> state : statePercentages.entrySet())
             {
-                outputStream.writeChars(String.format("State: %s: Percent Over 85: $.2f", state.getKey(), state.getValue()));
+                outputStream.writeChars(String.format("State: %s: Percent Over 85: %.2f\n", state.getKey(), state.getValue()));
             }
             outputStream.flush();
             outputStream.close();
