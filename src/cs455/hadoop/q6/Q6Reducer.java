@@ -16,7 +16,7 @@ public class Q6Reducer extends Reducer<Text, Q6Data, Text, Q6Data>
         {
             output.merge(data);
         }
-        context.write(key, output);
+
     }
 
 }

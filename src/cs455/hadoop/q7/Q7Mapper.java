@@ -19,7 +19,7 @@ public class Q7Mapper extends Mapper<LongWritable, Text, Text, Q7Data>
             q7Data.set(censusData);
 
             // Key kept the same since this is across all states
-            context.write(new Text("allStates"), q7Data);
+            context.write(new Text(censusData.getStateAbbreviation()), q7Data);
         }
     }
 }
