@@ -51,7 +51,7 @@ public class Q4Job
                 String[] keyval = line.split("\\t");
                 String[] keysplit = keyval[0].split("\\|");
                 String[] valsplit = keyval[1].split("\\|");
-                double total = Double.parseDouble(valsplit[0]) + Double.parseDouble(valsplit[1]) + Double.parseDouble(valsplit[2]) + Double.parseDouble(valsplit[3]);
+                Double total = Double.parseDouble(valsplit[0]) + Double.parseDouble(valsplit[1]) + Double.parseDouble(valsplit[2]) + Double.parseDouble(valsplit[3]);
 
                 double urbanInsidePercent = Double.parseDouble(valsplit[0]) / total * 100.0;
                 double urbanOutsidePercent = Double.parseDouble(valsplit[1]) / total * 100.0;
@@ -64,7 +64,7 @@ public class Q4Job
                 outputStream.writeChars(String.format("Urban, Outside:\t%s\t%.2f%%\n", valsplit[1], urbanOutsidePercent));
                 outputStream.writeChars(String.format("Rural:\t\t%s\t%.2f%%\n", valsplit[2], ruralPercent));
                 outputStream.writeChars(String.format("Undefined:\t%s\t%.2f%%\n", valsplit[3], undefinedPercent));
-                outputStream.writeChars(String.format("Total:\t\t%d\t%.2f%%\n", total, 100.0));
+                outputStream.writeChars(String.format("Total:\t\t%d\t%.2f%%\n", total.intValue(), 100.0));
                 outputStream.writeChars("----------------------------------------------------------------\n");
             }
             outputStream.flush();
