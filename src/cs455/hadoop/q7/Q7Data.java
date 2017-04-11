@@ -9,12 +9,25 @@ import java.io.DataOutput;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Q7Data implements Writable
 {
-    private HashMap<String, IntWritable> values = new LinkedHashMap<>();
+    private HashMap<String, IntWritable> values;
+
+    public Q7Data()
+    {
+        values = new HashMap<>();
+        values.put("house1Room", new IntWritable());
+        values.put("house2Room", new IntWritable());
+        values.put("house3Room", new IntWritable());
+        values.put("house4Room", new IntWritable());
+        values.put("house5Room", new IntWritable());
+        values.put("house6Room", new IntWritable());
+        values.put("house7Room", new IntWritable());
+        values.put("house8Room", new IntWritable());
+        values.put("house9Room", new IntWritable());
+    }
 
     public HashMap<String, IntWritable> getValues()
     {
@@ -74,9 +87,10 @@ public class Q7Data implements Writable
             }
         }
 
-        int count = allValues.size();
-        int placement = (int) (count * .95);
-        return "\nThe 95th percentile of the average number of rooms per house across all states: " + allValues.get(placement);
+        double count = allValues.size();
+        Double placement = (count * .95);
+        System.out.println(String.format("count: %f  -  placement: %f  -  size: %d", count, placement, allValues.size()));
+        return "\nThe 95th percentile of the average number of rooms per house across all states: " + allValues.get(placement.intValue());
 
     }
 }
