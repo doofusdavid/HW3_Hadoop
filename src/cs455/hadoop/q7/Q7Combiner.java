@@ -1,11 +1,12 @@
 package cs455.hadoop.q7;
 
+
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
 
-public class Q7Reducer extends Reducer<Text, Q7Data, Text, Text>
+public class Q7Combiner extends Reducer<Text, Q7Data, Text, Q7Data>
 {
     @Override
     protected void reduce(Text key, Iterable<Q7Data> values, Context context) throws IOException, InterruptedException
@@ -16,6 +17,6 @@ public class Q7Reducer extends Reducer<Text, Q7Data, Text, Text>
             output.merge(data);
         }
 
-        context.write(key, new Text(output.ninetyFifthPercentile()));
+        context.write(key, output);
     }
 }
