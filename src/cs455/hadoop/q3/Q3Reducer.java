@@ -6,11 +6,17 @@ import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
 
-public class Q3Reducer extends Reducer<Text, Text, Text, Text>
+public class Q3Reducer extends Reducer<Text, Q3Data, Text, Q3Data>
 {
     @Override
-    protected void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException
+    protected void reduce(Text key, Iterable<Q3Data> values, Context context) throws IOException, InterruptedException
     {
-        super.reduce(key, values, context);
+        Q3Data output = new Q3Data();
+        for (Q3Data data : values)
+        {
+            output.merge(data);
+        }
+
+        context.write(key, output);
     }
 }
