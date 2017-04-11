@@ -87,8 +87,12 @@ public class Q6Data implements Writable
     }
 
     @Override
-    public void readFields(DataInput dataInput) throws IOException
+    public void readFields(DataInput in) throws IOException
     {
+        for (HashMap.Entry<String, IntWritable> entry : values.entrySet())
+        {
+            entry.getValue().readFields(in);
+        }
 
     }
 
