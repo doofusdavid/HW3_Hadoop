@@ -1,6 +1,7 @@
 package cs455.hadoop.q2;
 
 
+import cs455.hadoop.util.State;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileSystem;
@@ -52,7 +53,7 @@ public class Q2Job
                 double malePercent = Double.parseDouble(valsplit[0]) / Double.parseDouble(valsplit[2]) * 100.0;
                 double femalePercent = Double.parseDouble(valsplit[1]) / Double.parseDouble(valsplit[3]) * 100.0;
 
-                String outputLine = String.format("%s - Male Unmarried: %.2f%% - Male Total: %s - Female Unmarried: %.2f%% - Female total: %s\n", keysplit[0], malePercent, valsplit[2], femalePercent, valsplit[3]);
+                String outputLine = String.format("%s - Male Unmarried: %.2f%% - Male Total: %s - Female Unmarried: %.2f%% - Female total: %s\n", State.valueOfAbbreviation(keysplit[0]), malePercent, valsplit[2], femalePercent, valsplit[3]);
                 outputStream.writeChars(outputLine);
             }
             outputStream.flush();

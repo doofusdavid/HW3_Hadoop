@@ -1,6 +1,7 @@
 package cs455.hadoop.q6;
 
 
+import cs455.hadoop.util.State;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileSystem;
@@ -46,7 +47,7 @@ public class Q6Job
             while ((line = reader.readLine()) != null)
             {
                 String[] keyval = line.split("\\t");
-                String outputLine = String.format("%s\n_______________________\n%s\n\n\n", keyval[0], keyval[1].replace("|", "\n"));
+                String outputLine = String.format("%s\n_______________________\n%s\n\n\n", State.valueOfAbbreviation(keyval[0]), keyval[1].replace("|", "\n"));
                 outputStream.writeChars(outputLine);
 
             }

@@ -60,16 +60,7 @@ public class Q1Job
             }
             outputStream.flush();
             outputStream.close();
-//            job.waitForCompletion(true);
-//
-//            Job job2 = Job.getInstance(conf, "cdedward Q1 aggregation");
-//            job.setJarByClass(Q1Job.class);
 
-
-
-
-            // Block until the job is completed
-            //System.exit(job.waitForCompletion(true) ? 0 : 1);
         }
         catch (IOException e)
         {

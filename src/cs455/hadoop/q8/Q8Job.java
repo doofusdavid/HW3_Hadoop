@@ -1,6 +1,7 @@
 package cs455.hadoop.q8;
 
 import cs455.hadoop.util.MapUtil;
+import cs455.hadoop.util.State;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileSystem;
@@ -60,7 +61,7 @@ public class Q8Job
             statePercentages = MapUtil.sortByValue(statePercentages);
             for (Map.Entry<String, Double> state : statePercentages.entrySet())
             {
-                outputStream.writeChars(String.format("State: %s: Percent Over 85: %.2f\n", state.getKey(), state.getValue()));
+                outputStream.writeChars(String.format("State: %s: Percent Over 85: %.2f\n", State.valueOfAbbreviation(state.getKey()), state.getValue()));
             }
             outputStream.flush();
             outputStream.close();
