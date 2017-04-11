@@ -16,7 +16,9 @@ public class Q6Mapper extends Mapper<LongWritable, Text, Text, Q6Data>
         CensusData censusData = new CensusData(value.toString());
         if (censusData.getSummaryLevel() == 100)
         {
-
+            Q6Data q6Data = new Q6Data();
+            q6Data.set(censusData);
+            context.write(new Text(censusData.getStateAbbreviation()), q6Data);
         }
     }
 }

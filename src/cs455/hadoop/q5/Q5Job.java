@@ -46,7 +46,7 @@ public class Q5Job
             while ((line = reader.readLine()) != null)
             {
                 String[] keyval = line.split("\\t");
-                String outputLine = String.format("%s\n_______________________\n%s\n", keyval[0], keyval[1].replace("|", "\n"));
+                String outputLine = String.format("%s\n_______________________\n%s\n\n\n", keyval[0], keyval[1].replace("|", "\n"));
                 outputStream.writeChars(outputLine);
 
             }
