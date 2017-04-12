@@ -11,10 +11,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Data class implementing writable for Q3, to avoid large pipe-delimited strings
+ */
 public class Q7Data implements Writable
 {
     private HashMap<String, IntWritable> values;
 
+    /**
+     * initialize everything as blank, otherwise Hadoop will break it later
+     */
     public Q7Data()
     {
         values = new HashMap<>();
@@ -34,6 +40,11 @@ public class Q7Data implements Writable
         return values;
     }
 
+    /**
+     * set the HashMap values by adding the relevant CensusData items
+     *
+     * @param censusData the line of census data from HDFS
+     */
     public void set(CensusData censusData)
     {
         values.put("1", new IntWritable(censusData.getHouse1Room()));
@@ -47,6 +58,11 @@ public class Q7Data implements Writable
         values.put("9", new IntWritable(censusData.getHouse9Room()));
     }
 
+    /**
+     * Implement writable so the data can go between mappers and reducers
+     * @param out the DataOutput to write to
+     * @throws IOException
+     */
     @Override
     public void write(DataOutput out) throws IOException
     {
@@ -56,6 +72,11 @@ public class Q7Data implements Writable
         }
     }
 
+    /**
+     * Implement readFields to hydrate from Hadoop
+     * @param in DataInput to read from
+     * @throws IOException
+     */
     @Override
     public void readFields(DataInput in) throws IOException
     {
@@ -66,6 +87,10 @@ public class Q7Data implements Writable
 
     }
 
+    /**
+     * Merge iterates through the values and adds the values passed in.  Used in Reduce.
+     * @param mergeData Q3Data containing the values you want to add to this Q3Data
+     */
     public void merge(Q7Data mergeData)
     {
         for (HashMap.Entry<String, IntWritable> entry : values.entrySet())
@@ -76,12 +101,20 @@ public class Q7Data implements Writable
         }
     }
 
+    /**
+     * Output pipe delimited string for final work in Q3Job
+     * @return pipe delimited string of Map values
+     */
     @Override
     public String toString()
     {
         return super.toString();
     }
 
+    /**
+     * Return the average of all the items in the map
+     * @return
+     */
     public double average()
     {
         long entries = 0;
@@ -97,22 +130,5 @@ public class Q7Data implements Writable
         }
         double average = (double) rooms / entries;
         return average;
-    }
-    public String ninetyFifthPercentile()
-    {
-        ArrayList<String> allValues = new ArrayList<>();
-        for (Map.Entry<String, IntWritable> entry : values.entrySet())
-        {
-            for (int i = 0; i < entry.getValue().get(); i++)
-            {
-                allValues.add(entry.getKey());
-            }
-        }
-
-        double count = allValues.size();
-        Double placement = (count * .95);
-        System.out.println(String.format("count: %f  -  placement: %f  -  size: %d", count, placement, allValues.size()));
-        return "\nThe 95th percentile of the average number of rooms per house across all states: " + allValues.get(placement.intValue());
-
     }
 }

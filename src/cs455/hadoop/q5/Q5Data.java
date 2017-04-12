@@ -70,6 +70,12 @@ public class Q5Data implements Writable
         values.put("houseValue500kAndOver", new IntWritable(censusData.getHouseValue500kAndOver()));
     }
 
+    /**
+     * Implement writable so the data can go between mappers and reducers
+     *
+     * @param out the DataOutput to write to
+     * @throws IOException
+     */
     @Override
     public void write(DataOutput out) throws IOException
     {
@@ -79,6 +85,11 @@ public class Q5Data implements Writable
         }
     }
 
+    /**
+     * Implement readFields to hydrate from Hadoop
+     * @param in DataInput to read from
+     * @throws IOException
+     */
     @Override
     public void readFields(DataInput in) throws IOException
     {
@@ -88,6 +99,10 @@ public class Q5Data implements Writable
         }
     }
 
+    /**
+     * Merge iterates through the values and adds the values passed in.  Used in Reduce.
+     * @param mergeData Q5Data containing the values you want to add to this Q5Data
+     */
     public void merge(Q5Data mergeData)
     {
 
@@ -99,6 +114,10 @@ public class Q5Data implements Writable
         }
     }
 
+    /**
+     * Output pipe delimited string for final work in Q3Job
+     * @return pipe delimited string of Map values
+     */
     @Override
     public String toString()
     {
@@ -112,6 +131,10 @@ public class Q5Data implements Writable
         return outString;
     }
 
+    /**
+     * Calculate median value of all items in values
+     * @return median as a string to be displayed
+     */
     public String median()
     {
         ArrayList<String> allValues = new ArrayList<>();

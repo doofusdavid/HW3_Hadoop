@@ -7,6 +7,9 @@ import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
 
+/**
+ * Simple reducer adds previous values
+ */
 public class Q1Reducer extends Reducer<Text, IntWritable, Text, IntWritable>
 {
     @Override

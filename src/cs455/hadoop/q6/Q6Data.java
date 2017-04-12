@@ -11,11 +11,16 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
-
+/**
+ * Data class implementing writable for Q6, to avoid large pipe-delimited strings
+ */
 public class Q6Data implements Writable
 {
     private HashMap<String, IntWritable> values;
 
+    /**
+     * initialize everything as blank, otherwise Hadoop will break it later
+     */
     public Q6Data()
     {
         values = new LinkedHashMap<>();
@@ -43,6 +48,11 @@ public class Q6Data implements Writable
         return values;
     }
 
+    /**
+     * set the  values by adding the relevant CensusData items
+     *
+     * @param censusData the line of census data from HDFS
+     */
     public void set(CensusData censusData)
     {
         values.put("rentUnder100", new IntWritable(censusData.getRentUnder100()));
@@ -64,6 +74,10 @@ public class Q6Data implements Writable
         values.put("rentNoCashRent", new IntWritable(censusData.getRentNoCashRent()));
     }
 
+    /**
+     * Output pipe delimited string for final work in Q3Job
+     * @return pipe delimited string of Map values
+     */
     @Override
     public String toString()
     {
@@ -77,6 +91,11 @@ public class Q6Data implements Writable
         return outString;
     }
 
+    /**
+     * Implement writable so the data can go between mappers and reducers
+     * @param out the DataOutput to write to
+     * @throws IOException
+     */
     @Override
     public void write(DataOutput out) throws IOException
     {
@@ -86,6 +105,11 @@ public class Q6Data implements Writable
         }
     }
 
+    /**
+     * Implement readFields to hydrate from Hadoop
+     * @param in DataInput to read from
+     * @throws IOException
+     */
     @Override
     public void readFields(DataInput in) throws IOException
     {
@@ -96,6 +120,10 @@ public class Q6Data implements Writable
 
     }
 
+    /**
+     * Merge iterates through the values and adds the values passed in.  Used in Reduce.
+     * @param mergeData Q3Data containing the values you want to add to this Q3Data
+     */
     public void merge(Q6Data mergeData)
     {
         for (HashMap.Entry<String, IntWritable> entry : values.entrySet())
@@ -107,6 +135,10 @@ public class Q6Data implements Writable
 
     }
 
+    /**
+     * Calculate median value of all items in values
+     * @return median as a string to be displayed
+     */
     public String median()
     {
         ArrayList<String> allValues = new ArrayList<>();

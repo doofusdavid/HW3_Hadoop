@@ -7,7 +7,9 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-
+/**
+ * Output values by Key=state abbreviation (+ a string to remind me which values were which) and values were pipe delimited.
+ */
 public class Q2Mapper extends Mapper<LongWritable, Text, Text, Text>
 {
     @Override

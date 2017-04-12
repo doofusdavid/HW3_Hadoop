@@ -7,6 +7,9 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
+/**
+ * Simple data, so going with a pipe delimited string
+ */
 public class Q8Mapper extends Mapper<LongWritable, Text, Text, Text>
 {
 

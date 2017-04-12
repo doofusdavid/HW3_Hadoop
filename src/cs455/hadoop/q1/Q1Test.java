@@ -5,7 +5,7 @@ import cs455.hadoop.util.CensusData;
 import java.io.*;
 
 /**
- * Created by david on 3/20/17.
+ * This was used and discarded when I found the Docker Hadoop
  */
 public class Q1Test
 {

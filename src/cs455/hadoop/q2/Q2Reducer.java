@@ -5,7 +5,10 @@ import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
 
-
+/**
+ * Increment the values from the Mapper.  Need to split them out from the pipe delimited string, and reform them
+ * into another pipe delimited string before writing them.
+ */
 public class Q2Reducer extends Reducer<Text, Text, Text, Text>
 {
     @Override

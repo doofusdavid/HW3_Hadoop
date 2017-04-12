@@ -9,6 +9,10 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
+/**
+ * Write out the state owner and renter occupied values using StateAbbreviation - Rent, and -Own for keys.
+ * Also, used Counters to maintain the totals.
+ */
 public class Q1Mapper extends Mapper<LongWritable, Text, Text, IntWritable>
 {
     @Override
@@ -19,7 +23,6 @@ public class Q1Mapper extends Mapper<LongWritable, Text, Text, IntWritable>
         {
             context.write(new Text(data.getStateAbbreviation() + " - Rent"), new IntWritable(data.getRenterOccupied()));
             context.write(new Text(data.getStateAbbreviation() + " - Own"), new IntWritable(data.getOwnerOccupied()));
-            // context.write(new Text(data.getStateAbbreviation() + " - Total"), new IntWritable(data.getOwnerOccupied() + data.getRenterOccupied()));
             context.getCounter(State.valueOfAbbreviation(data.getStateAbbreviation())).increment(data.getOwnerOccupied() + data.getRenterOccupied());
         }
     }

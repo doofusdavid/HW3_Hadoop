@@ -5,6 +5,9 @@ import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
 
+/**
+ * Bypass Writable Data class and just use strings again
+ */
 public class Q8Reducer extends Reducer<Text, Text, Text, Text>
 {
     @Override

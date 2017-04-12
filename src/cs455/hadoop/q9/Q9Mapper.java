@@ -12,6 +12,7 @@ public class Q9Mapper extends Mapper<LongWritable, Text, Text, Q9Data>
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException
     {
+        // We don't care about states, we want all data
         CensusData censusData = new CensusData(value.toString());
         if (censusData.getSummaryLevel() == 100)
         {

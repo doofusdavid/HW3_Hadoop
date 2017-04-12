@@ -10,11 +10,17 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.TreeMap;
 
+/**
+ * Data class implementing writable for Q3, to avoid large pipe-delimited strings
+ */
 
 public class Q9Data implements Writable
 {
     private TreeMap<String, IntWritable> values;
 
+    /**
+     * initialize everything as blank, otherwise Hadoop will break it later
+     */
     public Q9Data()
     {
         values = new TreeMap<>();
@@ -32,6 +38,11 @@ public class Q9Data implements Writable
         return values;
     }
 
+    /**
+     * set the TreeMap values by adding the relevant CensusData items
+     *
+     * @param censusData the line of census data from HDFS
+     */
     public void set(CensusData censusData)
     {
         values.put("0.0 Total Population", new IntWritable(censusData.getPersons()));
@@ -81,6 +92,10 @@ public class Q9Data implements Writable
         values.put("2.4 65 years and older", new IntWritable(sixtyFiveAndOlder));
     }
 
+    /**
+     * Output pipe delimited string for final work in Q3Job
+     * @return pipe delimited string of Map values
+     */
     @Override
     public String toString()
     {
@@ -93,6 +108,11 @@ public class Q9Data implements Writable
         return outString;
     }
 
+    /**
+     * Implement writable so the data can go between mappers and reducers
+     * @param out the DataOutput to write to
+     * @throws IOException
+     */
     @Override
     public void write(DataOutput out) throws IOException
     {
@@ -103,6 +123,11 @@ public class Q9Data implements Writable
 
     }
 
+    /**
+     * Implement readFields to hydrate from Hadoop
+     * @param in DataInput to read from
+     * @throws IOException
+     */
     @Override
     public void readFields(DataInput in) throws IOException
     {
@@ -112,6 +137,10 @@ public class Q9Data implements Writable
         }
     }
 
+    /**
+     * Merge iterates through the values and adds the values passed in.  Used in Reduce.
+     * @param mergeData Q3Data containing the values you want to add to this Q3Data
+     */
     public void merge(Q9Data mergeData)
     {
         for (HashMap.Entry<String, IntWritable> entry : values.entrySet())

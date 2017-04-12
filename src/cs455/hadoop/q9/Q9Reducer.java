@@ -5,7 +5,9 @@ import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
 
-
+/**
+ * Standard reducer adding previous versions
+ */
 public class Q9Reducer extends Reducer<Text, Q9Data, Text, Q9Data>
 {
     @Override
