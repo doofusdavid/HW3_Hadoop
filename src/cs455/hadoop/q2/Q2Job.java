@@ -39,6 +39,7 @@ public class Q2Job
             FileOutputFormat.setOutputPath(job, new Path(args[1]));
             job.waitForCompletion(true);
 
+            // read in the results file, save to new file
             FileSystem fs = FileSystem.get(conf);
             BufferedReader reader = new BufferedReader(new InputStreamReader(fs.open(new Path(args[1] + "/part-r-00000"))));
             String line = null;
@@ -47,12 +48,14 @@ public class Q2Job
             while ((line = reader.readLine()) != null)
             {
                 String[] keyval = line.split("\\t");
+                // data is pipe delimited
                 String[] keysplit = keyval[0].split("\\|");
                 String[] valsplit = keyval[1].split("\\|");
 
                 double malePercent = Double.parseDouble(valsplit[0]) / Double.parseDouble(valsplit[2]) * 100.0;
                 double femalePercent = Double.parseDouble(valsplit[1]) / Double.parseDouble(valsplit[3]) * 100.0;
 
+                // output formatted string to final results file.
                 String outputLine = String.format("%s - Male Unmarried: %.2f%% - Male Total: %s - Female Unmarried: %.2f%% - Female total: %s\n", State.valueOfAbbreviation(keysplit[0]), malePercent, valsplit[2], femalePercent, valsplit[3]);
                 outputStream.writeChars(outputLine);
             }

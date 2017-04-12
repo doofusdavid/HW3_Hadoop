@@ -40,10 +40,13 @@ public class Q5Job
             FileOutputFormat.setOutputPath(job, new Path(args[1]));
             job.waitForCompletion(true);
 
+            // read in the results file, save to new file
             FileSystem fs = FileSystem.get(conf);
             BufferedReader reader = new BufferedReader(new InputStreamReader(fs.open(new Path(args[1] + "/part-r-00000"))));
             String line = null;
             FSDataOutputStream outputStream = fs.create(new Path(args[1] + "/finalResults.txt"));
+
+            // Iterate through results, print them nicely
             while ((line = reader.readLine()) != null)
             {
                 String[] keyval = line.split("\\t");

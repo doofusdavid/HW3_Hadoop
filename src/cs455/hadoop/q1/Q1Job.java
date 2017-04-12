@@ -42,11 +42,13 @@ public class Q1Job
             job.waitForCompletion(true);
             Counters counters = job.getCounters();
 
+            // read in the results file, save to new file
             FileSystem fs = FileSystem.get(conf);
             BufferedReader reader = new BufferedReader(new InputStreamReader(fs.open(new Path(args[1] + "/part-r-00000"))));
             String line = null;
             FSDataOutputStream outputStream = fs.create(new Path(args[1] + "/finalResults.txt"));
 
+            // Iterate through the values and calculate the percentage, since we're done reducing them.
             while ((line = reader.readLine()) != null)
             {
                 String[] keyval = line.split("\\t");
@@ -54,6 +56,8 @@ public class Q1Job
                 Counter counter = counters.findCounter(State.valueOfAbbreviation(keysplit[0]));
 
                 double percentage = Float.parseFloat(keyval[1]) / counter.getValue() * 100.0;
+
+                // output formatted string to final results file.
                 String outputLine = line + String.format(" - Percentage: %.2f%% \n", percentage);
                 System.out.println(outputLine);
                 outputStream.writeChars(outputLine);

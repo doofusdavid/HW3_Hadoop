@@ -42,12 +42,16 @@ public class Q8Job
             FileOutputFormat.setOutputPath(job, new Path(args[1]));
             job.waitForCompletion(true);
 
+            // read in the results file, save to new file
             FileSystem fs = FileSystem.get(conf);
             BufferedReader reader = new BufferedReader(new InputStreamReader(fs.open(new Path(args[1] + "/part-r-00000"))));
             String line = null;
             FSDataOutputStream outputStream = fs.create(new Path(args[1] + "/finalResults.txt"));
 
+            // will need to manipulate results
             Map<String, Double> statePercentages = new LinkedHashMap<>();
+
+            // Iterate through the values and calculate the percentage, since we're done reducing them.
             while ((line = reader.readLine()) != null)
             {
                 String[] keyval = line.split("\\t");
@@ -58,7 +62,11 @@ public class Q8Job
                 double percent = Double.parseDouble(valsplit[0]) / Double.parseDouble(valsplit[1]) * 100.0;
                 statePercentages.put(state, percent);
             }
+
+            // sort the percentages by value
             statePercentages = MapUtil.sortByValue(statePercentages);
+
+            // Iterate through the percentages, saving them to final results file
             for (Map.Entry<String, Double> state : statePercentages.entrySet())
             {
                 outputStream.writeChars(String.format("State: %s: Percent Over 85: %.2f\n", State.valueOfAbbreviation(state.getKey()), state.getValue()));

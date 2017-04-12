@@ -41,11 +41,13 @@ public class Q4Job
             FileOutputFormat.setOutputPath(job, new Path(args[1]));
             job.waitForCompletion(true);
 
+            // read in the results file, save to new file
             FileSystem fs = FileSystem.get(conf);
             BufferedReader reader = new BufferedReader(new InputStreamReader(fs.open(new Path(args[1] + "/part-r-00000"))));
             String line = null;
             FSDataOutputStream outputStream = fs.create(new Path(args[1] + "/finalResults.txt"));
 
+            // Iterate through data, unpack from | delimited, and output it.
             while ((line = reader.readLine()) != null)
             {
                 String[] keyval = line.split("\\t");
@@ -53,6 +55,7 @@ public class Q4Job
                 String[] valsplit = keyval[1].split("\\|");
                 Double total = Double.parseDouble(valsplit[0]) + Double.parseDouble(valsplit[1]) + Double.parseDouble(valsplit[2]) + Double.parseDouble(valsplit[3]);
 
+                // Calculate percentages
                 double urbanInsidePercent = Double.parseDouble(valsplit[0]) / total * 100.0;
                 double urbanOutsidePercent = Double.parseDouble(valsplit[1]) / total * 100.0;
                 double ruralPercent = Double.parseDouble(valsplit[2]) / total * 100.0;
